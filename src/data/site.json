@@ -1,0 +1,117 @@
+{
+  "brand": "OMODA | JAECOO Semarang Raya",
+  "dealerName": "Dealer JAECOO Semarang",
+  "salesName": "Rio",
+  "whatsapp": "6285642304516",
+  "phoneDisplay": "0856-4230-4516",
+  "waDefault": "Halo, saya mau tanya tentang OMODA 04 EV di Semarang.",
+  "address": {
+    "street": "Jl. Madukoro Raya No. 45, Tawangsari, Kec. Semarang Barat",
+    "locality": "Semarang",
+    "region": "Jawa Tengah",
+    "postalCode": "50144",
+    "country": "ID"
+  },
+  "openingHours": [
+    {
+      "hari": "Senin - Sabtu",
+      "buka": "08:00",
+      "tutup": "17:00"
+    }
+  ],
+  "mapEmbed": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.401737235811!2d110.38903647454146!3d-6.96184546816202!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e70f500523d9d1d%3A0x58749a72235a7df7!2sJAECOO%20SEMARANG!5e0!3m2!1sid!2sid!4v1785789875955!5m2!1sid!2sid",
+  "social": {
+    "instagram": "https://www.instagram.com/jaecoosemarangraya",
+    "tiktok": "https://www.tiktok.com/@jaecoosemarangraya"
+  },
+  "seo": {
+    "titleSuffix": "OMODA JAECOO Jawa Tengah",
+    "defaultDescription": "OMODA 04 EV untuk Jawa Tengah. Mobil listrik dgn jangkauan 553 km sekali cas, dilayani dari Semarang ke Solo, Kudus, Magelang, dan sekitarnya bersama Rio.",
+    "locale": "id_ID",
+    "judulBeranda": "OMODA JAECOO Jawa Tengah - Mobil Listrik OMODA 04 EV",
+    "deskripsiBeranda": "OMODA 04 EV untuk seluruh Jawa Tengah. Mobil listrik jangkauan 553 km sekali cas, biaya operasional lebih hemat. Tanya Rio lewat WhatsApp.",
+    "deskripsiTentang": "Dealer JAECOO Semarang yang melayani seluruh Jawa Tengah. Alamat, jam buka, kota yang dijangkau, dan kontak Rio.",
+    "modelPembuka": "untuk Jawa Tengah, mobil listrik penuh.",
+    "modelPenutup": "Tanya jangkauan, pengisian daya, dan pengiriman ke kotamu lewat Rio."
+  },
+  "promoPopup": {
+    "aktif": true,
+    "gambar": "/banner-rio.jpeg",
+    "lebar": 1254,
+    "tinggi": 1254,
+    "alt": "OMODA 04 EV dan JAECOO J5 EV di Dealer JAECOO Semarang. Hubungi Rio di 0856-4230-4516.",
+    "ctaLabel": "Tanya Rio Sekarang",
+    "ctaPesan": "Halo, saya mau ikut pre-order OMODA 04 EV dan masuk kuota 1.000 pertama. Boleh dibantu prosesnya?"
+  },
+  "floatingPromo": {
+    "aktif": true,
+    "gambar": "/banner-utama.jpeg",
+    "alt": "Pre-book OMODA 04 EV di GIIAS 2026.",
+    "ctaLabel": "Pre-Order Sekarang",
+    "ctaPesan": "Halo Rio, saya mau pre-order OMODA 04 EV."
+  },
+  "areaLayanan": [
+    {
+      "kota": "Semarang",
+      "catatan": "Kota dealer. Test drive, pengecekan unit, dan serah terima langsung di showroom Madukoro."
+    },
+    {
+      "kota": "Ungaran",
+      "catatan": "Sekitar 30 menit dari dealer. Kunjungan sales ke rumah atau kantor atas permintaan."
+    },
+    {
+      "kota": "Kendal",
+      "catatan": "Sekitar 45 menit dari dealer. Pengiriman unit sampai alamat setelah administrasi selesai."
+    },
+    {
+      "kota": "Demak",
+      "catatan": "Sekitar 45 menit dari dealer. Konsultasi dan pengurusan dokumen dapat dilakukan jarak jauh."
+    },
+    {
+      "kota": "Salatiga",
+      "catatan": "Sekitar 1 jam dari dealer. Penjadwalan test drive menyesuaikan waktu kunjungan Anda."
+    },
+    {
+      "kota": "Kudus",
+      "catatan": "Sekitar 1,5 jam dari dealer. Pengiriman unit dan pendampingan administrasi tersedia."
+    },
+    {
+      "kota": "Surakarta (Solo)",
+      "catatan": "Sekitar 2 jam dari dealer. Melayani pemesanan luar kota dengan pengiriman sampai alamat."
+    },
+    {
+      "kota": "Magelang",
+      "catatan": "Sekitar 2 jam dari dealer. Konsultasi lewat WhatsApp, unit dikirim setelah unit siap."
+    },
+    {
+      "kota": "Pekalongan",
+      "catatan": "Sekitar 2 jam dari dealer. Pemesanan jarak jauh dengan pengiriman unit ke alamat."
+    },
+    {
+      "kota": "Pati",
+      "catatan": "Sekitar 2 jam dari dealer. Pendampingan proses dari pemesanan sampai serah terima."
+    }
+  ],
+  "faqUmum": [
+    {
+      "tanya": "Berapa jauh OMODA 04 EV bisa menempuh sekali pengisian?",
+      "jawab": "553 km berdasarkan pengukuran NEDC, memakai baterai LFP 65,05 kWh. Angka sebenarnya di jalan menyesuaikan gaya berkendara, beban, dan penggunaan pendingin kabin."
+    },
+    {
+      "tanya": "Bagaimana cara mengisi dayanya di rumah?",
+      "jawab": "Pengisian dapat dilakukan di rumah memakai wall charger, dan di luar rumah memakai pengisian cepat DC. Untuk pemesan awal tersedia benefit wall charger 3-in-1 yang ditingkatkan."
+    },
+    {
+      "tanya": "Apakah biaya perawatan mobil listrik lebih murah?",
+      "jawab": "Umumnya lebih hemat karena tidak ada penggantian oli mesin, filter, maupun busi, dan komponen bergeraknya jauh lebih sedikit. Rincian biaya berkala dapat kami jelaskan saat konsultasi."
+    },
+    {
+      "tanya": "Di mana lokasi dealernya dan apakah melayani luar kota?",
+      "jawab": "Dealer JAECOO Semarang berada di Jl. Madukoro Raya No. 45, Tawangsari, Semarang Barat. Kami melayani Solo, Kendal, Demak, Kudus, Salatiga, dan kota lain di Jawa Tengah dengan pengiriman sampai alamat."
+    },
+    {
+      "tanya": "Kapan harga OMODA 04 EV keluar dan bagaimana cara memesannya?",
+      "jawab": "Harga OTR diumumkan menjelang peluncuran resmi. Pemesanan dilakukan lewat WhatsApp: cek sisa kuota, pilih varian dan warna, lalu bayar tanda jadi untuk mengunci nomor urut beserta benefitnya."
+    }
+  ]
+}
