@@ -810,6 +810,13 @@ details[open] .nav__sum::after{transform:rotate(225deg) translate(-2px,-2px)}
   letter-spacing:.1em;text-transform:uppercase;margin-bottom:5px;
 }
 .area__item p{color:#5e5e5e;font-size:14px;line-height:1.6}
+.area__item h3 a{color:inherit}
+.area__item h3 a:hover{color:var(--accent)}
+.area__tautan{
+  display:inline-block;margin-top:8px;font-size:13px;font-weight:600;
+  color:var(--accent);
+}
+.area__tautan:hover{text-decoration:underline}
 
 /* Foto model kini berasal dari dua merek dgn rasio berbeda. Kotak dipatok
    16:9 dan gambar memakai `contain` agar tidak ada yang terpotong. */

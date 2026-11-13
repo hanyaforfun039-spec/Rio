@@ -29,6 +29,13 @@ export function teksHarga(car: Car): string {
 
 export const punyaHarga = (car: Car): boolean => car.hargaOtr != null;
 
+/** Label PENDEK pengganti angka harga di daftar yang ruangnya sempit.
+    Dipisahkan dari `teksHarga`, yang saat harga belum ada mengembalikan satu
+    kalimat penjelas — terlalu panjang untuk baris daftar yang seharusnya
+    sejajar dengan "Rp 344.900.000" di baris lain. */
+export const labelHargaPendek = (car: Car): string =>
+  sedangPreOrder(car) ? 'Open pre-book' : 'Hubungi kami';
+
 /** Merek diturunkan dari nama model. Situs ini kini memuat dua merek dalam
     satu grup (OMODA dan JAECOO), dan menyebut merek yang salah di data
     terstruktur membuat Google mengaitkan produk ke merek yang keliru. */

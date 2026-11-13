@@ -54,43 +54,183 @@
   "areaLayanan": [
     {
       "kota": "Semarang",
-      "catatan": "Kota showroom. Titik awal pengiriman unit ke seluruh Jawa Tengah."
+      "catatan": "Kota showroom. Titik awal pengiriman unit ke seluruh Jawa Tengah.",
+      "slug": "semarang",
+      "rute": "Showroom kami ada di Jl. Madukoro Raya, Semarang Barat, dekat kompleks PRPP.",
+      "sorot": "Kota showroom, jadi unit bisa dilihat dan dicoba langsung hari itu juga.",
+      "ev": "Pemakaian dalam kota adalah kondisi paling menguntungkan untuk mobil listrik: sering berhenti berarti sering mengisi ulang daya lewat pengereman regeneratif, dan tidak ada bahan bakar yang terbuang saat berhenti.",
+      "tanya": [
+        [
+          "Bisa datang langsung tanpa janji?",
+          "Bisa. Tapi menghubungi lebih dulu lewat WhatsApp membuat unit yang ingin Anda lihat sudah disiapkan, termasuk kalau ingin mencoba lebih dari satu model."
+        ],
+        [
+          "Apakah bisa test drive di dalam kota?",
+          "Bisa. Rute dalam kota justru berguna untuk merasakan perbedaan paling nyata mobil listrik: tarikan dari diam dan senyapnya kabin saat macet."
+        ]
+      ]
     },
     {
       "kota": "Ungaran",
-      "catatan": "Sekitar 30 menit. Perjalanan harian pulang-pergi ke Semarang memakai jauh di bawah separuh baterai."
+      "catatan": "Sekitar 30 menit. Perjalanan harian pulang-pergi ke Semarang memakai jauh di bawah separuh baterai.",
+      "slug": "ungaran",
+      "rute": "Sekitar 30 menit lewat tol Semarang-Solo, keluar Banyumanik lalu Ungaran.",
+      "sorot": "Paling dekat dari showroom. Banyak pembeli dari sini memakai mobilnya untuk pulang-pergi ke Semarang setiap hari.",
+      "ev": "Pulang-pergi Ungaran-Semarang setiap hari hanya memakai sebagian kecil dari jangkauan 553 km, jadi pengisian di rumah seminggu sekali umumnya cukup.",
+      "tanya": [
+        [
+          "Apakah tanjakan ke arah Ungaran membebani baterai?",
+          "Naik memang memakai daya lebih banyak, tetapi saat menurun kembali ke Semarang sebagian daya itu dikembalikan lewat pengereman regeneratif."
+        ],
+        [
+          "Bisa minta sales datang ke rumah?",
+          "Bisa. Untuk Ungaran kami biasa menjemput berkas dan mengantar unit ke alamat, jadi Anda cukup datang sekali saat serah terima."
+        ]
+      ]
     },
     {
       "kota": "Kendal",
-      "catatan": "Sekitar 45 menit. Pulang-pergi setiap hari masih jauh di bawah jangkauan 553 km sekali pengisian."
+      "catatan": "Sekitar 45 menit. Pulang-pergi setiap hari masih jauh di bawah jangkauan 553 km sekali pengisian.",
+      "slug": "kendal",
+      "rute": "Sekitar 45 menit ke arah barat lewat pantura atau tol Semarang-Batang.",
+      "sorot": "Jalur barat, searah dengan kawasan industri Kaliwungu.",
+      "ev": "Pulang-pergi Kendal-Semarang masih jauh di bawah jangkauan sekali pengisian, termasuk untuk yang menempuhnya setiap hari kerja.",
+      "tanya": [
+        [
+          "Apakah pengiriman unit sampai ke alamat di Kendal?",
+          "Ya. Setelah administrasi selesai, unit diantar sampai alamat Anda tanpa biaya kirim tambahan untuk wilayah ini."
+        ],
+        [
+          "Bagaimana kalau ingin mencoba mobilnya dulu?",
+          "Unit demo dapat dibawa ke lokasi Anda, atau Anda datang ke showroom Semarang yang hanya sekitar 45 menit lewat tol."
+        ]
+      ]
     },
     {
       "kota": "Demak",
-      "catatan": "Sekitar 45 menit. Pemakaian rutin ke Semarang cukup diisi di rumah, tanpa perlu mampir mengisi daya."
+      "catatan": "Sekitar 45 menit. Pemakaian rutin ke Semarang cukup diisi di rumah, tanpa perlu mampir mengisi daya.",
+      "slug": "demak",
+      "rute": "Sekitar 45 menit ke arah timur lewat pantura.",
+      "sorot": "Jalur timur. Banyak pembeli dari sini mengurus seluruh prosesnya jarak jauh.",
+      "ev": "Jarak harian ke Semarang jauh di dalam jangkauan satu kali pengisian, jadi mobil cukup diisi di rumah tanpa perlu singgah mengisi daya.",
+      "tanya": [
+        [
+          "Bisa mengurus pembelian tanpa bolak-balik ke Semarang?",
+          "Bisa. Konsultasi, pengisian data, dan tanda tangan dokumen dapat diurus jarak jauh; unit diantar setelah semuanya selesai."
+        ],
+        [
+          "Berapa lama proses sampai unit diterima?",
+          "Bergantung ketersediaan unit dan persetujuan leasing bila memakai kredit. Perkiraan waktunya kami sampaikan di awal, bukan setelah uang masuk."
+        ]
+      ]
     },
     {
       "kota": "Salatiga",
-      "catatan": "Sekitar 1 jam. Rute menanjak; pengereman regeneratif mengembalikan sebagian daya saat menurun."
+      "catatan": "Sekitar 1 jam. Rute menanjak; pengereman regeneratif mengembalikan sebagian daya saat menurun.",
+      "slug": "salatiga",
+      "rute": "Sekitar 1 jam lewat tol Semarang-Solo, keluar Bawen lalu Salatiga.",
+      "sorot": "Dataran tinggi dengan jalur menanjak panjang di sepanjang perjalanan.",
+      "ev": "Rute menanjak memang memakai daya lebih besar saat naik, tetapi turunan panjangnya mengembalikan sebagian daya. Pulang-pergi tetap dalam satu kali pengisian.",
+      "tanya": [
+        [
+          "Apakah mobil listrik kuat untuk tanjakan ke Salatiga?",
+          "Motor listrik mengeluarkan torsi penuh sejak putaran nol, jadi tanjakan justru terasa lebih ringan dibanding mesin bensin yang perlu turun gigi."
+        ],
+        [
+          "Bisa test drive di rute menanjak?",
+          "Bisa diatur. Rute ke arah Bawen dan Salatiga adalah cara paling jujur untuk menguji tenaga dan pengereman."
+        ]
+      ]
     },
     {
       "kota": "Kudus",
-      "catatan": "Sekitar 1,5 jam. Perjalanan pulang-pergi masih dalam satu kali pengisian penuh."
+      "catatan": "Sekitar 1,5 jam. Perjalanan pulang-pergi masih dalam satu kali pengisian penuh.",
+      "slug": "kudus",
+      "rute": "Sekitar 1,5 jam ke arah timur lewat pantura, melewati Demak.",
+      "sorot": "Jalur pantura timur. Cukup jauh untuk dijadikan ukuran pemakaian antarkota.",
+      "ev": "Semarang-Kudus pulang-pergi masih selesai dalam satu kali pengisian penuh, tanpa perlu berhenti mengisi daya di tengah jalan.",
+      "tanya": [
+        [
+          "Apakah perlu mengisi daya di tengah perjalanan?",
+          "Untuk pulang-pergi Kudus-Semarang, tidak. Jarak totalnya masih jauh di bawah jangkauan 553 km sekali pengisian."
+        ],
+        [
+          "Bagaimana pengurusan STNK dan BPKB untuk pembeli Kudus?",
+          "Diurus dari Semarang dan dikirim setelah terbit. Anda tidak perlu datang untuk urusan administrasi."
+        ]
+      ]
     },
     {
       "kota": "Surakarta (Solo)",
-      "catatan": "Sekitar 2 jam. Semarang-Solo pulang-pergi masih di bawah jangkauan sekali cas."
+      "catatan": "Sekitar 2 jam. Semarang-Solo pulang-pergi masih di bawah jangkauan sekali cas.",
+      "slug": "solo",
+      "rute": "Sekitar 2 jam lewat tol Semarang-Solo.",
+      "sorot": "Kota besar kedua yang kami layani rutin, tersambung tol sepanjang perjalanan.",
+      "ev": "Semarang-Solo pulang-pergi masih di bawah jangkauan sekali pengisian. Perjalanan tol dengan kecepatan tetap juga termasuk kondisi yang efisien.",
+      "tanya": [
+        [
+          "Melayani pembeli dari Solo dan sekitarnya?",
+          "Ya. Pemesanan luar kota diurus jarak jauh: dokumen lewat kurir, unit diantar sampai alamat di Solo, Sukoharjo, Karanganyar, dan sekitarnya."
+        ],
+        [
+          "Apakah harganya berbeda dengan di Semarang?",
+          "Harga OTR yang kami cantumkan adalah OTR Jawa Tengah, jadi sama. Perbedaan hanya mungkin muncul pada biaya pengiriman untuk wilayah tertentu."
+        ]
+      ]
     },
     {
       "kota": "Magelang",
-      "catatan": "Sekitar 2 jam. Jalur wisata ke arah Borobudur dan Dieng terjangkau tanpa singgah mengisi daya."
+      "catatan": "Sekitar 2 jam. Jalur wisata ke arah Borobudur dan Dieng terjangkau tanpa singgah mengisi daya.",
+      "slug": "magelang",
+      "rute": "Sekitar 2 jam lewat Bawen, Ambarawa, lalu Secang.",
+      "sorot": "Jalur pegunungan, searah dengan kawasan wisata Borobudur dan Dieng.",
+      "ev": "Jalur wisata ke arah Borobudur dan sekitarnya terjangkau tanpa singgah mengisi daya, termasuk perjalanan pulang.",
+      "tanya": [
+        [
+          "Cocokkah mobil listrik untuk sering ke kawasan wisata?",
+          "Untuk perjalanan sejauh Magelang dan sekitarnya, satu kali pengisian cukup untuk pergi dan pulang. Yang perlu disiapkan hanya pengisian di rumah."
+        ],
+        [
+          "Apakah sales bisa menjelaskan lewat WhatsApp dulu?",
+          "Bisa. Perbandingan varian, simulasi biaya, dan video unit nyata kami kirim lebih dulu supaya perjalanan Anda ke Semarang tidak sia-sia."
+        ]
+      ]
     },
     {
       "kota": "Pekalongan",
-      "catatan": "Sekitar 2 jam. Lewat tol Batang-Semarang; unit dikirim sampai alamat."
+      "catatan": "Sekitar 2 jam. Lewat tol Batang-Semarang; unit dikirim sampai alamat.",
+      "slug": "pekalongan",
+      "rute": "Sekitar 2 jam ke arah barat lewat tol Batang-Semarang.",
+      "sorot": "Jalur barat bertol penuh, jadi waktu tempuhnya relatif terjaga.",
+      "ev": "Perjalanan tol dengan kecepatan tetap adalah kondisi efisien untuk mobil listrik. Pulang-pergi masih dalam satu kali pengisian.",
+      "tanya": [
+        [
+          "Bisa memesan tanpa datang ke Semarang?",
+          "Bisa. Seluruh proses dari pemesanan sampai pelat nomor terbit diurus dari Semarang, dan unit diantar sampai alamat Anda."
+        ],
+        [
+          "Bagaimana kalau ingin melihat warna aslinya dulu?",
+          "Kami kirimkan video dan foto unit nyata, bukan hanya katalog, sebelum Anda memutuskan warna."
+        ]
+      ]
     },
     {
       "kota": "Pati",
-      "catatan": "Sekitar 2 jam. Jalur pantura timur; pengiriman unit sampai alamat setelah administrasi selesai."
+      "catatan": "Sekitar 2 jam. Jalur pantura timur; pengiriman unit sampai alamat setelah administrasi selesai.",
+      "slug": "pati",
+      "rute": "Sekitar 2 jam ke arah timur lewat pantura, melewati Demak dan Kudus.",
+      "sorot": "Ujung timur wilayah layanan rutin kami di jalur pantura.",
+      "ev": "Meski jadi yang terjauh di jalur timur, pulang-pergi Pati-Semarang tetap selesai dalam satu kali pengisian penuh.",
+      "tanya": [
+        [
+          "Apakah Pati termasuk wilayah pengiriman?",
+          "Ya. Unit diantar sampai alamat setelah administrasi selesai, sama seperti kota lain di jalur pantura timur."
+        ],
+        [
+          "Siapa yang mendampingi kalau ada kendala setelah unit diterima?",
+          "Satu orang sales mendampingi dari awal sampai setelah serah terima, jadi Anda tidak dioper-oper."
+        ]
+      ]
     }
   ],
   "faqUmum": [

@@ -66,7 +66,18 @@ export interface SiteConfig {
   /** Kota yang dilayani. Tiap entri WAJIB punya catatan yang berbeda — daftar
       nama kota tanpa isi terbaca sebagai penjejalan kata kunci oleh mesin
       pencari dan justru merugikan peringkat. */
-  areaLayanan: { kota: string; catatan: string }[];
+  areaLayanan: {
+    kota: string;
+    catatan: string;
+    /* Dipakai halaman /area/<slug>. Tiap kota WAJIB punya isi yang berbeda
+       secara substansi — halaman yang hanya menukar nama kota terbaca
+       sebagai doorway page dan justru diturunkan peringkatnya. */
+    slug: string;
+    rute: string;
+    sorot: string;
+    ev: string;
+    tanya: [string, string][];
+  }[];
   faqUmum: Faq[];
   /* Teks SEO sengaja disimpan per situs, bukan di kode, supaya tiap sales
      punya judul dan deskripsi sendiri. Dua situs dgn teks identik akan

@@ -24,8 +24,14 @@ const teks = lede ?? site.seo.ledeArea;
     <div class="area">
       {site.areaLayanan.map((k) => (
         <article class="area__item">
-          <h3>{k.kota}</h3>
+          {/* Nama kota ditautkan ke halamannya sendiri. Tanpa tautan ini,
+              halaman /area/<kota> hanya terjangkau lewat sitemap dan nyaris
+              tidak menerima bobot dari beranda. */}
+          <h3><a href={`/area/${k.slug}`}>{k.kota}</a></h3>
           <p>{k.catatan}</p>
+          <a class="area__tautan" href={`/area/${k.slug}`}>
+            Selengkapnya untuk {k.kota.replace(/\s*\(.*\)$/, '')}
+          </a>
         </article>
       ))}
     </div>

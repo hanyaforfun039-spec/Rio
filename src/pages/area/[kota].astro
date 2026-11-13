@@ -1,0 +1,181 @@
+---
+/* =============================================================================
+   Halaman wilayah layanan — satu halaman per kota.
+
+   KENAPA ADA: beranda hanya bisa menjelaskan tiap kota dalam satu kalimat.
+   Orang yang mencari "omoda solo" atau "jaecoo kendal" sedang menanyakan hal
+   yang spesifik: berapa jauh, lewat mana, bagaimana unitnya sampai, dan apakah
+   mobil listrik masuk akal untuk jarak itu. Satu halaman per kota memberi
+   ruang menjawabnya.
+
+   YANG HARUS DIJAGA: isi tiap halaman berbeda secara substansi — rute, sorotan,
+   pembahasan jangkauan, dan dua pertanyaan khas kota itu. Halaman yang hanya
+   menukar nama kota adalah pola doorway page, dan mesin pencari menurunkan
+   peringkatnya, bukan menaikkan.
+   ============================================================================ */
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { site } from '../../lib/site';
+import { getAllCars, teksHarga, punyaHarga, merek, labelHargaPendek } from '../../lib/cars';
+import { waLink, pesanPenawaran } from '../../lib/whatsapp';
+
+export function getStaticPaths() {
+  return site.areaLayanan.map((k) => ({ params: { kota: k.slug }, props: { k } }));
+}
+
+interface Props {
+  k: {
+    kota: string;
+    catatan: string;
+    slug: string;
+    rute: string;
+    sorot: string;
+    ev: string;
+    tanya: [string, string][];
+  };
+}
+const { k } = Astro.props;
+
+/* "Surakarta (Solo)" -> nama bersih untuk kalimat, tanpa kurung. */
+const nama = k.kota.replace(/\s*\(.*\)$/, '');
+const cars = getAllCars();
+
+const judul = `OMODA JAECOO ${nama}`;
+const deskripsi =
+  `Pembelian OMODA dan JAECOO untuk wilayah ${nama}. ${k.rute} ` +
+  `Konsultasi dan pengurusan dokumen jarak jauh, unit diantar sampai alamat.`;
+
+const remah = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Beranda', item: new URL('/', Astro.site).href },
+    { '@type': 'ListItem', position: 2, name: 'Area Layanan', item: new URL('/tentang#area', Astro.site).href },
+    { '@type': 'ListItem', position: 3, name: nama, item: new URL(`/area/${k.slug}`, Astro.site).href },
+  ],
+};
+
+const faqSkema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: k.tanya.map(([q, a]) => ({
+    '@type': 'Question',
+    name: q,
+    acceptedAnswer: { '@type': 'Answer', text: a },
+  })),
+};
+---
+
+<BaseLayout judul={judul} deskripsi={deskripsi} skema={[remah, faqSkema]}>
+  <section class="kota-head">
+    <div class="wrap wrap--sempit">
+      <nav class="crumbs" aria-label="Remah">
+        <a href="/">Beranda</a>
+        <span aria-hidden="true">/</span>
+        <a href="/tentang#area">Area Layanan</a>
+        <span aria-hidden="true">/</span>
+        <span aria-current="page">{nama}</span>
+      </nav>
+
+      <p class="kota-eyebrow">Wilayah Layanan</p>
+      <h1 class="kota-judul">OMODA JAECOO {nama}</h1>
+      <p class="kota-lede">{k.sorot}</p>
+    </div>
+  </section>
+
+  <section class="kota-isi">
+    <div class="wrap wrap--sempit">
+      <h2>Jarak dan jalur dari showroom</h2>
+      <p>{k.rute}</p>
+      <p>{k.catatan}</p>
+
+      <h2>Mobil listrik untuk jarak ini</h2>
+      <p>{k.ev}</p>
+
+      <h2>Model yang tersedia</h2>
+      <ul class="kota-model">
+        {cars.map((c) => (
+          <li>
+            <a href={`/mobil/${c.slug}`}>
+              <span class="kota-model__nama">{c.nama}</span>
+              <span class="kota-model__harga">
+                {punyaHarga(c) ? teksHarga(c) : labelHargaPendek(c)}
+              </span>
+            </a>
+          </li>
+        ))}
+      </ul>
+      <p class="kota-catatan">
+        Harga OTR Jawa Tengah, berlaku sama untuk pembeli dari {nama}.
+      </p>
+
+      <h2>Cara pembeliannya</h2>
+      <ol class="kota-langkah">
+        <li>Konsultasi lewat WhatsApp: pilihan model, varian, warna, dan simulasi biaya.</li>
+        <li>Pengisian data dan dokumen, dapat diurus jarak jauh tanpa datang ke Semarang.</li>
+        <li>Pengajuan leasing bila memakai kredit, diproses dari showroom.</li>
+        <li>Unit diantar sampai alamat Anda di {nama} setelah administrasi selesai.</li>
+      </ol>
+
+      <h2>Pertanyaan dari pembeli {nama}</h2>
+      {k.tanya.map(([q, a]) => (
+        <details class="faq">
+          <summary>{q}</summary>
+          <p>{a}</p>
+        </details>
+      ))}
+
+      <div class="kota-cta">
+        <a class="btn btn--dark" href={waLink(pesanPenawaran())} target="_blank" rel="noopener">
+          Tanya untuk wilayah {nama}
+        </a>
+        <a class="btn btn--ghost" href="/tentang#area">Lihat wilayah lain</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .kota-head { padding: 112px 0 28px; background: var(--mist); }
+  .crumbs { display: flex; flex-wrap: wrap; gap: 8px; font-size: 13px; color: #7c7676; margin-bottom: 18px; }
+  .crumbs a { color: #7c7676; }
+  .crumbs a:hover { color: var(--ink); }
+
+  .kota-eyebrow {
+    font-family: var(--display); font-weight: 600; font-size: 12px;
+    letter-spacing: .18em; text-transform: uppercase; color: var(--accent);
+  }
+  .kota-judul {
+    margin-top: 8px;
+    font-family: var(--display); font-weight: 700;
+    font-size: clamp(30px, 7vw, 48px); letter-spacing: .02em; line-height: 1.1;
+  }
+  .kota-lede { margin-top: 12px; font-size: 17px; color: #4a4a4a; line-height: 1.6; }
+
+  .kota-isi { padding: 40px 0 72px; }
+  .kota-isi h2 {
+    margin-top: 36px; margin-bottom: 10px;
+    font-family: var(--display); font-weight: 700; font-size: 21px; letter-spacing: .02em;
+  }
+  .kota-isi p { line-height: 1.7; color: #3f3f3f; }
+  .kota-isi p + p { margin-top: 10px; }
+
+  .kota-model { list-style: none; margin-top: 14px; display: grid; gap: 1px; background: var(--line); }
+  .kota-model a {
+    display: flex; justify-content: space-between; align-items: baseline; gap: 14px;
+    padding: 14px 2px; background: var(--paper); color: inherit;
+  }
+  .kota-model a:hover .kota-model__nama { color: var(--accent); }
+  .kota-model__nama { font-family: var(--display); font-weight: 700; font-size: 16px; }
+  .kota-model__harga { font-size: 14px; color: #5e5e5e; white-space: nowrap; }
+  .kota-catatan { margin-top: 10px; font-size: 13px; color: #7c7676; }
+
+  .kota-langkah { margin: 14px 0 0 20px; display: grid; gap: 8px; }
+  .kota-langkah li { line-height: 1.65; color: #3f3f3f; padding-left: 4px; }
+
+  .kota-cta { margin-top: 36px; display: flex; flex-wrap: wrap; gap: 12px; }
+
+  @media (min-width: 48rem) {
+    .kota-head { padding-top: 140px; }
+    .kota-model a { padding: 16px 4px; }
+  }
+</style>
