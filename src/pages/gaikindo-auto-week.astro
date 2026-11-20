@@ -1,0 +1,242 @@
+---
+/* =============================================================================
+   GAIKINDO Auto Week 2026 — sudut Jawa Tengah: dua kota sekaligus.
+
+   Sudut halaman ini sengaja berbeda dari situs lain dalam grup. Empat halaman
+   pameran dengan isi yang sama akan saling meniadakan di hasil pencarian.
+
+   Jadwal dan venue diperiksa langsung ke pemberitaan. Bahwa harga OMODA 04
+   diumumkan di acara ini berasal dari keterangan principal, bukan pemberitaan
+   — karena itu catatan di bawah halaman menyebut waktunya dapat berubah.
+   Nomor booth dan promo khusus belum dicantumkan karena belum dipastikan.
+   ============================================================================ */
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { site } from '../lib/site';
+import { getAllCars, punyaHarga, teksHarga, merek, sedangPreOrder } from '../lib/cars';
+import { waLink, pesanPenawaran } from '../lib/whatsapp';
+
+const cars = getAllCars();
+const berharga = cars.filter(punyaHarga);
+const kota = site.address.locality;
+
+const judul = 'GAIKINDO Auto Week 2026 Jawa Tengah - Semarang & Solo';
+const deskripsi = 'GAIKINDO Auto Week 2026 hadir di dua kota Jawa Tengah: Semarang di 23 Mall dan Solo di The Park Mall Solo Baru, keduanya 25-29 November. Harga resmi OMODA 04 EV diumumkan di pameran ini.';
+
+const waUtama = waLink('Halo, saya mau tanya soal GAIKINDO Auto Week 2026 di Jawa Tengah. Boleh dibantu info jadwal dan pemesanannya?');
+
+const eventSkema = {
+  '@context': 'https://schema.org',
+  '@type': 'Event',
+  name: 'GAIKINDO Auto Week 2026 Jawa Tengah',
+  description: 'Pameran otomotif GAIKINDO Auto Week 2026 di Jawa Tengah, digelar di Semarang dan Solo.',
+  startDate: '2026-11-25',
+  endDate: '2026-11-29',
+  eventStatus: 'https://schema.org/EventScheduled',
+  eventAttendanceMode: 'https://schema.org/OfflineEventAttendanceMode',
+  location: {
+    '@type': 'Place',
+    name: 'Downtown Atrium, 23 Mall Semarang',
+    address: {
+      '@type': 'PostalAddress',
+      addressLocality: 'Semarang',
+      addressRegion: 'Jawa Tengah',
+      addressCountry: 'ID',
+    },
+  },
+  /* Penyelenggaranya GAIKINDO. Mengaku sebagai penyelenggara adalah klaim palsu. */
+  organizer: { '@type': 'Organization', name: 'GAIKINDO', url: 'https://jakartaautoweek.com/' },
+};
+
+const remah = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Beranda', item: new URL('/', Astro.site).href },
+    { '@type': 'ListItem', position: 2, name: judul, item: new URL('/gaikindo-auto-week', Astro.site).href },
+  ],
+};
+
+const tanya: [string, string][] = [
+  [
+    'Di Jawa Tengah, GAIKINDO Auto Week 2026 digelar di mana saja?',
+    'Dua kota: Semarang di Downtown Atrium 23 Mall, dan Solo di The Park Mall Solo ' +
+    'Baru. Keduanya berlangsung 25 sampai 29 November 2026.',
+  ],
+  [
+    'Apa bedanya dengan yang di Jakarta?',
+    'Gelaran pusatnya di ICE BSD City, Tangerang Selatan, lebih panjang: 20 sampai ' +
+    '29 November 2026. Sembilan kota lain berlangsung 25 sampai 29 November di ' +
+    'pusat perbelanjaan.',
+  ],
+  [
+    'Kapan harga resmi OMODA 04 EV diumumkan?',
+    'Di GAIKINDO Auto Week 2026 ini. Tinggalkan nomor Anda lewat WhatsApp, kami ' +
+    'kabari begitu angkanya keluar.',
+  ],
+  [
+    'Saya di luar Semarang dan Solo, bagaimana?',
+    'Tidak perlu datang ke pameran. Konsultasi dan pemesanan diurus jarak jauh, ' +
+    'dan unit diantar sampai alamat Anda di seluruh Jawa Tengah.',
+  ],
+];
+
+const faqSkema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: tanya.map(([q, a]) => ({
+    '@type': 'Question',
+    name: q,
+    acceptedAnswer: { '@type': 'Answer', text: a },
+  })),
+};
+---
+
+<BaseLayout judul={judul} deskripsi={deskripsi} skema={[remah, eventSkema, faqSkema]}>
+  <section class="gaw-head">
+    <div class="wrap wrap--sempit">
+      <nav class="crumbs" aria-label="Remah">
+        <a href="/">Beranda</a>
+        <span aria-hidden="true">/</span>
+        <span aria-current="page">GAIKINDO Auto Week 2026</span>
+      </nav>
+      <p class="gaw-eyebrow">Pameran · 25&ndash;29 November 2026</p>
+      <h1 class="gaw-judul">GAIKINDO Auto Week 2026 Jawa Tengah</h1>
+      <p class="gaw-lede">Jawa Tengah kebagian dua kota: Semarang dan Solo, keduanya 25&ndash;29 November. Harga resmi OMODA 04 EV diumumkan di pameran ini.</p>
+    </div>
+  </section>
+
+  <section class="gaw-isi">
+    <div class="wrap wrap--sempit">
+      <h2>Dua kota di Jawa Tengah</h2>
+      <p>
+        Tahun ini GAIKINDO Auto Week digelar serentak di sepuluh kota, dan dua di
+        antaranya ada di Jawa Tengah. Keduanya berlangsung pada tanggal yang sama,
+        jadi Anda bisa memilih yang terdekat.
+      </p>
+      <div class="gaw-kartu">
+        <article>
+          <p class="gaw-label">Semarang</p>
+          <p class="gaw-tanggal">25&ndash;29 November 2026</p>
+          <p class="gaw-tempat">Downtown Atrium, 23 Mall Semarang</p>
+        </article>
+        <article>
+          <p class="gaw-label">Solo</p>
+          <p class="gaw-tanggal">25&ndash;29 November 2026</p>
+          <p class="gaw-tempat">The Park Mall Solo Baru</p>
+        </article>
+      </div>
+      <p>
+        Gelaran pusatnya di ICE BSD City, Tangerang Selatan, lebih panjang:
+        20&ndash;29 November 2026.
+      </p>
+
+      <h2>Harga OMODA 04 EV diumumkan di sini</h2>
+      <p>
+        OMODA 04 EV sudah dibuka pemesanannya sejak pertengahan tahun tanpa harga
+        resmi. <strong>Angka OTR-nya diumumkan di pameran ini.</strong> Kami tidak
+        menebak angkanya di halaman ini &mdash; perkiraan sebelum pengumuman resmi
+        hanya membuat orang salah menyiapkan anggaran.
+      </p>
+
+      <h2>Kalau Anda di luar dua kota itu</h2>
+      <p>
+        Tidak perlu datang ke pameran untuk memesan. Konsultasi, pengajuan kredit,
+        dan pemesanan diurus jarak jauh, dan unit diantar sampai alamat &mdash;
+        termasuk ke Kudus, Magelang, Pekalongan, Pati, dan kota lain di Jawa Tengah.
+      </p>
+      <p>
+        Lihat <a href="/tentang#area">wilayah yang kami layani</a> beserta waktu
+        tempuh dan cara pengirimannya.
+      </p>
+
+      <h2>Harga model yang sudah berlaku</h2>
+      <ul class="gaw-daftar">
+        {berharga.map((c) => (
+          <li>
+            <a href={`/mobil/${c.slug}`}>
+              <span class="gaw-nama">{c.nama}</span>
+              <span class="gaw-merek">{merek(c)}</span>
+            </a>
+            <span class="gaw-harga">{teksHarga(c)}</span>
+          </li>
+        ))}
+      </ul>
+
+      <h2>Pertanyaan umum</h2>
+      {tanya.map(([q, a]) => (
+        <details class="faq">
+          <summary>{q}</summary>
+          <p>{a}</p>
+        </details>
+      ))}
+
+      <div class="gaw-cta">
+        <a class="btn btn--dark" href={waUtama} target="_blank" rel="noopener">Tanya jadwal &amp; pemesanan</a>
+        <a class="btn btn--ghost" href="/#lineup">Lihat semua model</a>
+      </div>
+
+      <p class="gaw-sumber">
+        Jadwal dan lokasi dirangkum dari pemberitaan GAIKINDO Auto Week 2026.
+        Jadwal pameran maupun waktu pengumuman harga dapat berubah sewaktu-waktu;
+        konfirmasi lewat WhatsApp sebelum berangkat.
+      </p>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .gaw-head { padding: 112px 0 28px; background: var(--mist); }
+  .crumbs { display: flex; flex-wrap: wrap; gap: 8px; font-size: 13px; color: #7c7676; margin-bottom: 18px; }
+  .crumbs a { color: #7c7676; }
+  .crumbs a:hover { color: var(--ink); }
+
+  .gaw-eyebrow {
+    font-family: var(--display); font-weight: 600; font-size: 12px;
+    letter-spacing: .18em; text-transform: uppercase; color: var(--accent);
+  }
+  .gaw-judul {
+    margin-top: 8px;
+    font-family: var(--display); font-weight: 700;
+    font-size: clamp(27px, 6.2vw, 42px); letter-spacing: .02em; line-height: 1.12;
+  }
+  .gaw-lede { margin-top: 12px; font-size: 17px; color: #4a4a4a; line-height: 1.6; }
+
+  .gaw-isi { padding: 36px 0 72px; }
+  .gaw-isi h2 {
+    margin-top: 38px; margin-bottom: 10px;
+    font-family: var(--display); font-weight: 700; font-size: 21px; letter-spacing: .02em;
+  }
+  .gaw-isi p { line-height: 1.7; color: #3f3f3f; }
+  .gaw-isi p + p { margin-top: 10px; }
+
+  .gaw-kartu { display: grid; gap: 14px; margin-top: 16px; }
+  .gaw-kartu article { border: 1px solid var(--line); padding: 16px 18px; background: var(--paper); }
+  .gaw-label {
+    font-family: var(--display); font-weight: 600; font-size: 11px;
+    letter-spacing: .16em; text-transform: uppercase; color: var(--accent);
+  }
+  .gaw-tanggal { margin-top: 6px; font-family: var(--display); font-weight: 700; font-size: 18px; }
+  .gaw-tempat { margin-top: 2px; font-size: 14px; color: #5e5e5e; }
+
+  .gaw-daftar { list-style: none; margin-top: 14px; display: grid; gap: 1px; background: var(--line); }
+  .gaw-daftar li {
+    display: flex; justify-content: space-between; align-items: baseline; gap: 14px;
+    background: var(--paper); padding: 13px 2px;
+  }
+  .gaw-daftar a { color: inherit; }
+  .gaw-daftar a:hover .gaw-nama { color: var(--accent); }
+  .gaw-nama { font-family: var(--display); font-weight: 700; font-size: 16px; }
+  .gaw-merek {
+    display: block; margin-top: 2px; font-size: 10px; letter-spacing: .14em;
+    text-transform: uppercase; color: var(--accent);
+  }
+  .gaw-harga { font-size: 14px; color: #5e5e5e; white-space: nowrap; }
+
+  .gaw-cta { margin-top: 36px; display: flex; flex-wrap: wrap; gap: 12px; }
+  .gaw-sumber { margin-top: 28px; font-size: 13px; color: #7c7676; line-height: 1.6; }
+
+  @media (min-width: 48rem) {
+    .gaw-head { padding-top: 140px; }
+    .gaw-kartu { grid-template-columns: 1fr 1fr; gap: 16px; }
+  }
+</style>
